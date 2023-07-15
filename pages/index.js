@@ -51,7 +51,7 @@ export default function Home() {
         <a target="_blank" href='https://www.linkedin.com/in/yojengrover/'><AiFillLinkedin /></a>
         <a target="_blank" href='https://github.com/yojengrover'><AiFillGithub /></a>
       </div>
-      <div className=' relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96 '> 
+      <div className=' relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-20 overflow-hidden md:h-96 md:w-96 '> 
       <Image src={deved} layout="fill" objectFit='cover'/></div>
       </div>
     </section>
@@ -90,13 +90,14 @@ export default function Home() {
 
         </p>
       </div >
+      <h3 className='text-3xl text-center dark:text-white'>Projects</h3>
       <div className='lg:flex gap-10 dark:text-white'>
         <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>TechMates</h4>
           <p className='py-2'>Social media website for developers</p>
           <p className='py-2 text-gray-800 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, Express, Node.js and SCSS</p>
           <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
-          <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
+          <a className='text-sm text-teal-600 ' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
@@ -106,7 +107,7 @@ export default function Home() {
           <p className='py-2'>Ride sharing application</p>
           <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, GraphQl, Node.js, MaterilUI and Bootstrap</p>
           <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
-          <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
+          <a className='text-sm text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
@@ -116,7 +117,7 @@ export default function Home() {
           <p className='py-2'>Portfolio website using Next.js and tailwind</p>
           <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> Next.JS, JavaScript and tailwind</p>
           <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
-          <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
+          <a className='text-sm text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
