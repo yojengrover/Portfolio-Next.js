@@ -3,48 +3,63 @@ import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
 import { Inter } from 'next/font/google'
 import deved from '../public/dev-ed-wave.png'
-import code from '../public/code.png'
-import design from '../public/design.png'
-import consulting from '../public/consulting.png'
-
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [darkMode, setDarkMode] = useState(false);
+  let iconStyles = { color: "white"}
+
+  const downloadResume = () => {
+    // using Java Script method to get PDF file
+    fetch('Grover_Yojen_FD.Resume.pdf').then(response => {
+        response.blob().then(blob => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            // Setting various property values
+            let alink = document.createElement('a');
+            alink.href = fileURL;
+            alink.download = 'Grover, Yojen resume.pdf';
+            alink.click();
+        })
+    })
+}
   return (
-    <div>
+    <div className={darkMode ? "dark":""}>
       <title>Yojen Portfolio</title>
-    <main className='bg-white px-10'>
+    <main className='bg-white px-10 dark:bg-gray-900' >
     <section className='min-h-screen'>
       <nav className='py-10 mb-12 flex justify-between'> 
-        <h1 className='text-xl font-burtons'>Yojen</h1>
+        <h1 className='text-xl font-burtons dark:text-white'>Yojen</h1>
         <ul className=' flex items-center'>
           <li>
-            <BsFillMoonStarsFill className='cursor-pointer text-2xl' />
+            <BsFillMoonStarsFill style={darkMode? iconStyles:""} className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)}/>
           </li>
-          <li><a className='bg-gradient-to-r from-cyan-500 bg-cyan-500 text-white px-4 py-2 rounded-md ml-8
-          ' href='#'>Resume</a></li>
+          <li><a className='bg-gradient-to-r from-teal-600 bg-cyan-600 text-white px-4 py-2 rounded-md ml-8
+          ' href='#' onClick={downloadResume}>Resume</a></li>
         </ul>
       </nav>
       <div className=' text-center p-10'>
         <h2 className='text-5xl py-2 text-teal-600 font-medium'>Yojen Grover</h2>
-        <h3 className=' text-2xl py-2 md:text-3xl'>JavaScript/Frontend Developer</h3>
-        <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto'>Frontend Developer/ Full Stack Developer experienced 
+        <h3 className=' text-2xl py-2 md:text-3xl dark:text-white'>JavaScript/Frontend Developer</h3>
+        <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white'>Frontend Developer/ Full Stack Developer experienced 
           in designing & developing custom websites based on 
           React/Redux and MERN Stack. </p>
       <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
-        <AiFillLinkedin />
-        <AiFillGithub />
+        <a target="_blank" href='https://www.linkedin.com/in/yojengrover/'><AiFillLinkedin /></a>
+        <a target="_blank" href='https://github.com/yojengrover'><AiFillGithub /></a>
       </div>
-      <div className=' relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96'> 
+      <div className=' relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96 '> 
       <Image src={deved} layout="fill" objectFit='cover'/></div>
       </div>
     </section>
     <section>
       <div>
-        <h3 className='text-3xl text-center'>Professional Summary</h3>
-        <p className='text-md py-5 leading-8 text-gray-800'>
-        <div className="bg-gray-100 p-8">
+        <h3 className='text-3xl text-center dark:text-white'>Professional Summary</h3>
+        <p className='text-md py-5 leading-8 text-gray-800 dark:text-cyan-50'>
+        <div className="bg-gray-100 p-8 dark:bg-gray-600">
   <h2 className="text-2xl font-bold mb-4">Front-end Development Experience</h2>
 
   <ul className="list-disc ml-8">
@@ -74,33 +89,33 @@ export default function Home() {
 </div>
 
         </p>
-      </div>
-      <div className='lg:flex gap-10'>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+      </div >
+      <div className='lg:flex gap-10 dark:text-white'>
+        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>TechMates</h4>
           <p className='py-2'>Social media website for developers</p>
-          <p className='py-2 text-gray-800'><span >Tech Stack:</span> React.JS, MongoDB, Express, Node.js and SCSS</p>
-          <p className='py-2 text-gray-800'><span >GitHub: </span>
+          <p className='py-2 text-gray-800 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, Express, Node.js and SCSS</p>
+          <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
           <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
         </div>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>GasNGo</h4>
           <p className='py-2'>Ride sharing application</p>
-          <p className='py-2 text-gray-800'><span >Tech Stack:</span> React.JS, MongoDB, GraphQl, Node.js, MaterilUI and Bootstrap</p>
-          <p className='py-2 text-gray-800'><span >GitHub: </span>
+          <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, GraphQl, Node.js, MaterilUI and Bootstrap</p>
+          <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
           <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
         </div>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>Portfolio</h4>
           <p className='py-2'>Portfolio website using Next.js and tailwind</p>
-          <p className='py-2 text-gray-800'><span >Tech Stack:</span> Next.JS, JavaScript and tailwind</p>
-          <p className='py-2 text-gray-800'><span >GitHub: </span>
+          <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> Next.JS, JavaScript and tailwind</p>
+          <p className='py-2 dark:text-cyan-50'><span >GitHub: </span>
           <a className='text-teal-600' href='https://github.com/yojengrover/Portfolio-Next.js'>
             https://github.com/yojengrover/Portfolio-Next.js
             </a> </p>
