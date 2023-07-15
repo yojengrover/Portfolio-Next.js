@@ -11,7 +11,7 @@ export default function Home() {
 
   const [darkMode, setDarkMode] = useState(false);
   let iconStyles = { color: "white"}
-  let iconsBlack = {}
+  let iconsBlack = { color: "black"}
 
   const downloadResume = () => {
     // using Java Script method to get PDF file
@@ -36,7 +36,7 @@ export default function Home() {
         <h1 className='text-xl text-gray-900 font-burtons dark:text-white'>Yojen</h1>
         <ul className=' flex items-center'>
           <li>
-            <BsFillMoonStarsFill style={darkMode? iconStyles:""} className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)}/>
+            <BsFillMoonStarsFill style={darkMode? iconStyles:iconsBlack} className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)}/>
           </li>
           <li><a className='bg-gradient-to-r from-teal-600 bg-cyan-600 text-white px-4 py-2 rounded-md ml-8
           ' href='#' onClick={downloadResume}>Resume</a></li>
@@ -91,7 +91,7 @@ export default function Home() {
 
         </p>
       </div >
-      <h3 className='text-3xl text-center dark:text-white'>Projects</h3>
+      <h3 className='text-3xl text-center text-gray-900 dark:text-white'>Projects</h3>
       <div className='lg:flex gap-10 dark:text-white'>
         <div className='text-center text-gray-900 shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>TechMates</h4>
