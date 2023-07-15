@@ -11,6 +11,7 @@ export default function Home() {
 
   const [darkMode, setDarkMode] = useState(false);
   let iconStyles = { color: "white"}
+  let iconsBlack = {}
 
   const downloadResume = () => {
     // using Java Script method to get PDF file
@@ -57,7 +58,7 @@ export default function Home() {
     </section>
     <section>
       <div>
-        <h3 className='text-3xl text-center dark:text-white'>Professional Summary</h3>
+        <h3 className='text-3xl text-gray-900 text-center dark:text-white'>Professional Summary</h3>
         <p className='text-md py-5 leading-8 text-gray-800 dark:text-cyan-50'>
         <div className="bg-gray-100 p-8 dark:bg-gray-600">
   <h2 className="text-2xl font-bold mb-4">Front-end Development Experience</h2>
@@ -92,7 +93,7 @@ export default function Home() {
       </div >
       <h3 className='text-3xl text-center dark:text-white'>Projects</h3>
       <div className='lg:flex gap-10 dark:text-white'>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
+        <div className='text-center text-gray-900 shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>TechMates</h4>
           <p className='py-2'>Social media website for developers</p>
           <p className='py-2 text-gray-800 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, Express, Node.js and SCSS</p>
@@ -102,7 +103,7 @@ export default function Home() {
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
         </div>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
+        <div className='text-center shadow-lg p-10 rounded-xl my-10 text-gray-900 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>GasNGo</h4>
           <p className='py-2'>Ride sharing application</p>
           <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> React.JS, MongoDB, GraphQl, Node.js, MaterilUI and Bootstrap</p>
@@ -112,7 +113,7 @@ export default function Home() {
             </a> </p>
           <p className='py-2'>Live:<span className='text-teal-700'> NA</span> </p>
         </div>
-        <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-white'>
+        <div className='text-center shadow-lg p-10 rounded-xl my-10 text-gray-900 dark:shadow-white'>
           <h4 className='text-lg font-medium pt-8 pb-2'>Portfolio</h4>
           <p className='py-2'>Portfolio website using Next.js and tailwind</p>
           <p className='py-2 dark:text-cyan-50'><span >Tech Stack:</span> Next.JS, JavaScript and tailwind</p>
